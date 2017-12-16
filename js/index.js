@@ -1,4 +1,4 @@
-let numbArr = [24, 789, 45, 963, 12, 4, 499];
+let numbArr = [24, 789, 45, 963, 12, 4, 499, 46, 789, 753, 951, 100, 200, 300, 400];
 let body = document.querySelector('body');
 
 
@@ -27,7 +27,7 @@ function fillObjArr (numbArr, rowId){
     let node = document.createElement('div');
     node.style.marginRight = '15px';
     node.classList.add('circle');
-    if(numbArr[parseInt(numbArr.length/2)] !== undefined){
+    // if(numbArr[parseInt(numbArr.length/2)] !== undefined){
         node.innerText = `${numbArr[parseInt(numbArr.length/2)]}`;
         nodeWrap.appendChild(node);
         if(numbArr.length > 1){
@@ -37,14 +37,14 @@ function fillObjArr (numbArr, rowId){
                 fillObjArr (numbArr.slice( 2), rowId);
             }
             else if (parseInt(numbArr.length/2)  ){
-                fillObjArr (numbArr.slice(0, parseInt(numbArr.length/2) - 1), rowId);
+                fillObjArr (numbArr.slice(0, parseInt(numbArr.length/2) ), rowId);
                 fillObjArr (numbArr.slice( parseInt(numbArr.length/2) + 1), rowId);
 
             }
 
         }
 
-    }
+    // }
 
 
 }
