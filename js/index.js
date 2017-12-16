@@ -1,0 +1,52 @@
+let numbArr = [24, 789, 45, 963, 12, 4, 499];
+let body = document.querySelector('body');
+
+
+function fillRow(arr){
+    let numbRow = 4;
+    for(let i = 0; i< numbRow; i++){
+
+        let nodeWrap = document.createElement('div');
+        nodeWrap.classList.add('flex-container');
+        nodeWrap.id = `row${i}`;
+        body.appendChild(nodeWrap);
+        console.log(nodeWrap);
+
+    }
+}
+
+fillRow(numbArr);
+
+function fillObjArr (numbArr, rowId){
+    numbArr.sort( (a, b) => {return a - b});
+    console.log(numbArr);
+    let row = `#row${rowId}`;
+    console.log(row);
+    console.log(document.querySelector('#row0'));
+    let nodeWrap = document.querySelector(`#row${rowId}`);
+    let node = document.createElement('div');
+    node.style.marginRight = '15px';
+    node.classList.add('circle');
+    if(numbArr[parseInt(numbArr.length/2)] !== undefined){
+        node.innerText = `${numbArr[parseInt(numbArr.length/2)]}`;
+        nodeWrap.appendChild(node);
+        if(numbArr.length > 1){
+            rowId++;
+            if(parseInt(numbArr.length) <= 3){
+                fillObjArr (numbArr.slice(0, 1), rowId);
+                fillObjArr (numbArr.slice( 2), rowId);
+            }
+            else if (parseInt(numbArr.length/2)  ){
+                fillObjArr (numbArr.slice(0, parseInt(numbArr.length/2) - 1), rowId);
+                fillObjArr (numbArr.slice( parseInt(numbArr.length/2) + 1), rowId);
+
+            }
+
+        }
+
+    }
+
+
+}
+
+fillObjArr(numbArr, 0);
