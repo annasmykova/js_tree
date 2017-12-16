@@ -1,13 +1,54 @@
 .flex-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+.father {
+    text-align: center;
+}
+
+.first-row {
+    display: flex;
+    justify-content: center;
 }
 
 .circle {
     border-radius: 50%;
     border: 1px solid #000;
+    position: relative;
+    display: inline-block;
+    padding: 5px 12px;
+    margin-bottom: 15px;
+}
+
+.circle + .circle {
+    margin-left: 70px;
 }
 
 .circle::after {
     content: '';
+    border-left: 1px solid #060205;
+    left: -8px;
+    top: 29px;
+    display: block;
+    position: absolute;
+    height: 40px;
+    transform: rotate(45deg);
+
+}
+
+.circle::before {
+    content: '';
+    border-left: 1px solid #060205;
+    left: 38px;
+    top: 29px;
+    display: block;
+    position: absolute;
+    height: 40px;
+    transform: rotate(-45deg);
+}
+
+.circle.without-line::after {
+    display: none;
 }
