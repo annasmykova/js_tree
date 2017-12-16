@@ -8,9 +8,10 @@
     text-align: center;
 }
 
-.first-row {
+.row {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 
 .circle {
@@ -23,7 +24,7 @@
 }
 
 .circle + .circle {
-    margin-left: 70px;
+    margin-left: 48px;
 }
 
 .circle::after {
@@ -35,7 +36,6 @@
     position: absolute;
     height: 40px;
     transform: rotate(45deg);
-
 }
 
 .circle::before {
@@ -51,4 +51,16 @@
 
 .circle.without-line::after {
     display: none;
+}
+
+.circle.without-line::before {
+    display: none;
+}
+
+.middle-position {
+    margin-top: 20px;
+}
+
+.middle-position + .middle-position {
+    margin-left: 120px;
 }
