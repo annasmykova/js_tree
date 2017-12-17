@@ -1,66 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding-top: 50px;
+}
 .flex-container {
     display: flex;
     justify-content: space-around;
-    /*flex-direction: column;*/
+    width: 960px;
+    margin: 0 auto;
 }
 
-/*.father {*/
-    /*text-align: center;*/
-/*}*/
-
-/*.row {*/
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*margin-top: 20px;*/
-/*}*/
-
+.flex-container + .flex-container {
+    margin-top: 50px;
+}
+#row3 {
+    overflow: hidden;
+}
 .circle {
     border-radius: 50%;
-    border: 1px solid #000;
-    /*position: relative;*/
-    display: inline-block;
-    padding: 5px 12px;
-    margin-bottom: 15px;
+    border: 1px solid #333;
+    height: 60px;
+    width: 60px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-
-.circle + .circle {
-    margin-left: 48px;
-}
-
-.circle::after {
+.circle::before, .circle::after{
     content: '';
-    border-left: 1px solid #060205;
-    left: -8px;
-    top: 29px;
-    display: block;
     position: absolute;
-    height: 40px;
+    top: 60px;
+    width: 1px;
+    left: 4px;
+    height: 20px;
+    background-color: #333;
+    transform: translateX(8px);
+}
+.circle::after{
+    left: 0;
     transform: rotate(45deg);
 }
-
-.circle::before {
-    content: '';
-    border-left: 1px solid #060205;
-    left: 38px;
-    top: 29px;
-    display: block;
-    position: absolute;
-    height: 40px;
+.circle::before{
+    left: 100%;
     transform: rotate(-45deg);
-}
-
-.circle.without-line::after {
-    display: none;
-}
-
-.circle.without-line::before {
-    display: none;
-}
-
-.middle-position {
-    margin-top: 20px;
-}
-
-.middle-position + .middle-position {
-    margin-left: 120px;
 }
