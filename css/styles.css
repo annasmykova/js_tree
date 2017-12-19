@@ -15,7 +15,7 @@ body {
 .flex-container + .flex-container {
     margin-top: 50px;
 }
-#row3 {
+.flex-container:last-child {
     overflow: hidden;
 }
 .circle {

@@ -3,17 +3,25 @@ let body = document.querySelector('body');
 
 
 function fillRow(arr){
-    let numbRow = 4;
-    for(let i = 0; i< numbRow; i++){
+    let numbRow = 1;
+    for(let i = 0; i<1000000 ; i++){
 
-        let nodeWrap = document.createElement('div');
-        nodeWrap.classList.add('flex-container');
-        nodeWrap.id = `row${i}`;
-        body.appendChild(nodeWrap);
-        console.log(nodeWrap);
+        if(arr.length <= Math.pow(2, numbRow)){
+            console.log(numbRow);
+            for(let j = 0; j<numbRow; j++){
+                let nodeWrap = document.createElement('div');
+                nodeWrap.classList.add('flex-container');
+                nodeWrap.id = `row${j}`;
+                body.appendChild(nodeWrap);
+                console.log(nodeWrap);
+            }
+            break;
+        }
+        numbRow++;
 
     }
 }
+
 
 fillRow(numbArr);
 
