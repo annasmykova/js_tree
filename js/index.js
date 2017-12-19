@@ -42,7 +42,8 @@ function fillObjArr (numbArr, rowId){
             rowId++;
             if(parseInt(numbArr.length) <= 3){
                 fillObjArr (numbArr.slice(0, 1), rowId);
-                fillObjArr (numbArr.slice( 2), rowId);
+                if(numbArr.length !== 2)
+                    fillObjArr (numbArr.slice( 2), rowId);
             }
             else if (parseInt(numbArr.length/2)  ){
                 fillObjArr (numbArr.slice(0, parseInt(numbArr.length/2) ), rowId);
