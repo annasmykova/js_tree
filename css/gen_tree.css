@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    padding-top: 50px;
+}
+.flex-container {
+    display: flex;
+    justify-content: space-around;
+    width: 1160px;
+    margin: 0 auto;
+}
+
+.flex-container + .flex-container {
+    margin-top: 50px;
+}
+.flex-container:first-child {
+    overflow: hidden;
+}
+.person{
+    text-align: center;
+    position: relative;
+
+}
+.circle {
+    text-align: center;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #333;
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.person::before, .person::after{
+    content: '';
+    position: absolute;
+    top: -25px;
+    width: 1px;
+    left: 4px;
+    height: 30px;
+    background-color: #333;
+    transform: translateX(8px);
+}
+.person::after{
+    left: 0;
+    transform: rotate(-45deg);
+}
+.person::before{
+    left: 100%;
+    transform: rotate(45deg);
+}
+.photo{
+    height: 80px;
+}
+.name {
+    text-align: center;
+}

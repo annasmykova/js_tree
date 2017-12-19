@@ -6,7 +6,7 @@ function fillRow(arr){
     let numbRow = 1;
     for(let i = 0; i<1000000 ; i++){
 
-        if(arr.length <= Math.pow(2, numbRow)){
+        if(arr.length < Math.pow(2, numbRow)){
             console.log(numbRow);
             for(let j = 0; j<numbRow; j++){
                 let nodeWrap = document.createElement('div');
@@ -27,15 +27,9 @@ fillRow(numbArr);
 
 function fillObjArr (numbArr, rowId){
     numbArr.sort( (a, b) => {return a - b});
-    console.log(numbArr);
-    let row = `#row${rowId}`;
-    console.log(row);
-    console.log(document.querySelector('#row0'));
     let nodeWrap = document.querySelector(`#row${rowId}`);
     let node = document.createElement('div');
-    node.style.marginRight = '15px';
     node.classList.add('circle');
-    // if(numbArr[parseInt(numbArr.length/2)] !== undefined){
         node.innerText = `${numbArr[parseInt(numbArr.length/2)]}`;
         nodeWrap.appendChild(node);
         if(numbArr.length > 1){
@@ -50,12 +44,7 @@ function fillObjArr (numbArr, rowId){
                 fillObjArr (numbArr.slice( parseInt(numbArr.length/2) + 1), rowId);
 
             }
-
         }
-
-    // }
-
-
 }
 
 fillObjArr(numbArr, 0);
